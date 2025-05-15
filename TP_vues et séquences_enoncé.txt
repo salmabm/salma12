@@ -1,0 +1,63 @@
+APPLICATIONS SUR LES VUES ET LES SEQUENCES
+******************************************
+créer un utilisateur gestion_projet/gestion_projet
+dont le schéma contient le modèle relationnel suivant:
+****
+conn system/admin
+
+create user gestion_projet identified by gestion_projet;
+
+Grant connect,resource, create view to gestion_projet; 
+*******
+
+Fournisseur(NF,NomF,ville)
+Piece(NP,NomP,ville,couleur)
+Projet(NJ,NomJ,ville)
+FPJ(#NF,#NP,#NJ,Quantite)
+
+//Insérer 4 enregistrements par table
+
+1. Créer une vue VF1 qui contient les informations suivantes:
+NF, NomF, Ville concernant les fournisseurs de Tunis
+- Afficher les NomF de cette vue
+- Insérer 2 enregistrements dans à travers
+vue concernant 2 villes différentes
+- Afficher le contenue de la vue
+- Afficher le contenue de la table Fournisseur
+
+2. Créer une vue VF2 qui contient les informations suivantes:
+NF, NomF, Ville concernant les fournisseurs de Tunis avec l'option
+ 'with check option'
+- Afficher les NomF de cette vue
+- Insérer 2 enregistrements dans cette vue concernant 2 villes différentes
+- Afficher le contenue de la vue
+- Afficher le contenue de la table Fournisseur
+
+3. Créer une vue VFPJ qui permet d'afficher le nomJ, nomF, NomP
+et quantité de chaque ligne projet
+- Essayez de faire une insertion dans cette vue. Qu'est ce que vous remarquez?
+
+4. Créer une vue sur la table FPJ en lecture seule qui contient les colonnes (Numero_Fournisseur,
+Numero_Projet, Numéro_Pièce). cette vue contient les information concernant les livraisons
+de la pièce numéro 2 dont la quantité est >=100 unités.
+
+5. créer une séquence qui permet de géner des numéros séquenciels 
+non cycliques commençant par 10
+ayant des pas de 10 sans valeur maximale.
+ Utiliser cette séqunece pour enregister deux enregistrements
+dans la table piece, 
+2 enregistrements dans la table projet et deux enregistrements dans la 
+table fournisseur
+
+
+
+
+
+
+
+
+
+
+
+
+
